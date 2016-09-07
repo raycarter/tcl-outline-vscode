@@ -1,0 +1,38 @@
+{
+    "name": "tcl-outline",
+    "displayName": "Tcl Outline",
+    "description": "Outline for Tcl in VS Code",
+    "version": "0.1.0",
+    "publisher": "sheng-li",
+    "engines": {
+        "vscode": "^1.4.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "onLanguage:tcl"
+    ],
+    "main": "./out/src/extension",
+    "contributes": {
+        "commands": [
+            {
+                "command": "extension.tclOutlineUnsorted",
+                "title": "tcl outline (not sorted)"
+            },
+            {
+                "command": "extension.tclOutlineSorted",
+                "title": "tcl outline (sorted)"
+            }
+        ]
+    },
+    "scripts": {
+        "vscode:prepublish": "node ./node_modules/vscode/bin/compile",
+        "compile": "node ./node_modules/vscode/bin/compile -watch -p ./",
+        "postinstall": "node ./node_modules/vscode/bin/install"
+    },
+    "devDependencies": {
+        "typescript": "^1.8.5",
+        "vscode": "^0.11.0"
+    }
+}
