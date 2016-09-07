@@ -20,7 +20,7 @@ At the moment there is no settings available.
 
 ## Source
 
-* [Github](http://code.visualstudio.com/docs/languages/markdown)
+* [Github](https://github.com/raycarter/tcl-outline-vscode)
 
 ## License
 
