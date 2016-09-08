@@ -3,7 +3,6 @@
     "displayName": "Tcl Outline",
     "description": "Outline for Tcl in VS Code",
     "version": "0.1.0",
-    "repository": "https://github.com/raycarter/tcl-outline-vscode",
     "publisher": "sheng",
     "engines": {
         "vscode": "^1.4.0"
@@ -35,5 +34,12 @@
     "devDependencies": {
         "typescript": "^1.8.5",
         "vscode": "^0.11.0"
+    },
+    "bugs": {
+        "url": "https://github.com/raycarter/tcl-outline-vscode/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/raycarter/tcl-outline-vscode"
     }
 }
