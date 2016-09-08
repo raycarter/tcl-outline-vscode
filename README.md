@@ -28,6 +28,9 @@ MIT
 
 ## Release Notes
 
+### 0.1.1
+
+* no need to install tcl language support first
 
 ### 0.1.0
 
