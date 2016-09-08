@@ -11,7 +11,7 @@
         "Other"
     ],
     "activationEvents": [
-        "onLanguage:tcl"
+        "*"
     ],
     "main": "./out/src/extension",
     "contributes": {
