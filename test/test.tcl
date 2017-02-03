@@ -11,3 +11,7 @@ proc def {d e} {
 proc aaa {a b c} {
 	
 }
+
+proc fff eee {
+	
+}

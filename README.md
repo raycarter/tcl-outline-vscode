@@ -28,6 +28,10 @@ MIT
 
 ## Release Notes
 
+### 0.1.2
+
+* [issue #3](https://github.com/raycarter/tcl-outline-vscode/issues/3)
+
 ### 0.1.1
 
 * no need to install tcl language support first

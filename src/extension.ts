@@ -35,7 +35,7 @@ class TclOutline {
         let text = vscode.window.activeTextEditor.document.getText();
 
         
-        let procReg = new RegExp('^\s*proc(.+?})');
+        let procReg = new RegExp('^\s*proc (.*)');
         let procFoundList = [];
         // parse text for proc
         let foundCount = 0, lineNum = 0;
@@ -47,7 +47,11 @@ class TclOutline {
                 let u = vscode.window.activeTextEditor.document.uri.path;
                 let anchor = `${vscode.window.activeTextEditor.document.uri}:${lineNum-1}`;
                 // channel.appendLine(anchor);
-                procFoundList.push(procFound[1] + ' -- ' + anchor + '\n');
+                let foundStr = procFound[1];
+                if (foundStr !== '' && foundStr.substr(foundStr.length-1, 1) === '{') {
+                    foundStr = foundStr.slice(0, -1);
+                }
+                procFoundList.push(foundStr + ' -- ' + anchor + '\n');
             }
         }
 
