@@ -28,6 +28,10 @@ MIT
 
 ## Release Notes
 
+### 0.1.3
+
+* [issue #4](https://github.com/raycarter/tcl-outline-vscode/issues/4)
+
 ### 0.1.2
 
 * [issue #3](https://github.com/raycarter/tcl-outline-vscode/issues/3)

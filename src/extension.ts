@@ -45,7 +45,7 @@ class TclOutline {
             if (procFound !== null) {
                 foundCount++;
                 let u = vscode.window.activeTextEditor.document.uri.path;
-                let anchor = `${vscode.window.activeTextEditor.document.uri}:${lineNum-1}`;
+                let anchor = `${vscode.window.activeTextEditor.document.uri}#${lineNum}`;
                 // channel.appendLine(anchor);
                 let foundStr = procFound[1];
                 if (foundStr !== '' && foundStr.substr(foundStr.length-1, 1) === '{') {
