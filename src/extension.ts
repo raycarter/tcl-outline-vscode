@@ -1,6 +1,7 @@
 'use strict';
 
 import * as vscode from 'vscode';
+import * as os from 'os';
 
 export function activate(context: vscode.ExtensionContext) {
   // output
@@ -45,7 +46,11 @@ class TclOutline {
       if (procFound !== null) {
         foundCount++;
         let u = vscode.window.activeTextEditor.document.uri.path;
-        let anchor = `${vscode.window.activeTextEditor.document.uri}:${lineNum}`;
+        let lineNumIndicator = ':';
+        if (/^win/.test(os.platform())) {
+          lineNumIndicator = '#';
+        }
+        let anchor = `${vscode.window.activeTextEditor.document.uri}${lineNumIndicator}${lineNum}`;
         // channel.appendLine(anchor);
         let foundStr = procFound[1];
         if (foundStr !== '' && foundStr.substr(foundStr.length-1, 1) === '{') {
