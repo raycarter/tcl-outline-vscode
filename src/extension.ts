@@ -5,16 +5,16 @@ import * as os from 'os';
 
 export function activate(context: vscode.ExtensionContext) {
   // output
-  let channel = vscode.window.createOutputChannel('tcl outline');
-  let tclOutline = new TclOutline(channel);
-  let tclOutlineUnsorted = vscode.commands.registerCommand('extension.tclOutlineUnsorted', () => {
+  const channel = vscode.window.createOutputChannel('tcl outline');
+  const tclOutline = new TclOutline(channel);
+  const tclOutlineUnsorted = vscode.commands.registerCommand('extension.tclOutlineUnsorted', () => {
     
     tclOutline.parseCurrentFile(false);
     
   });
   context.subscriptions.push(tclOutlineUnsorted);
 
-  let tclOutlineSorted = vscode.commands.registerCommand('extension.tclOutlineSorted', () => {
+  const tclOutlineSorted = vscode.commands.registerCommand('extension.tclOutlineSorted', () => {
     
     tclOutline.parseCurrentFile(true);
     
@@ -33,24 +33,24 @@ class TclOutline {
     this.channel = ch;
   }
   parseCurrentFile (sorted: boolean) {
-    let text = vscode.window.activeTextEditor.document.getText();
+    const text = vscode.window.activeTextEditor.document.getText();
 
     
-    let procReg = new RegExp('^\s*proc (.*)');
-    let procFoundList = [];
+    const procReg = new RegExp('^\s*proc (.*)');
+    const procFoundList = [];
     // parse text for proc
     let foundCount = 0, lineNum = 0;
     for (let line of text.split('\n')) {
       lineNum++;
-      let procFound = procReg.exec(line);
+      const procFound = procReg.exec(line);
       if (procFound !== null) {
         foundCount++;
-        let u = vscode.window.activeTextEditor.document.uri.path;
+        const u = vscode.window.activeTextEditor.document.uri.path;
         let lineNumIndicator = ':';
         if (/^win/.test(os.platform())) {
           lineNumIndicator = '#';
         }
-        let anchor = `${vscode.window.activeTextEditor.document.uri}${lineNumIndicator}${lineNum}`;
+        const anchor = `${vscode.window.activeTextEditor.document.uri}${lineNumIndicator}${lineNum}`;
         // channel.appendLine(anchor);
         let foundStr = procFound[1];
         if (foundStr !== '' && foundStr.substr(foundStr.length-1, 1) === '{') {
@@ -73,14 +73,4 @@ class TclOutline {
   }
 
 
-}
-
-class TclOutlineInfo {
-  private fileName: string;
-  private lineNum: number;
-
-  constructor (fn: string, num: number) {
-    this.fileName = fn;
-    this.lineNum = num;
-  }
 }
