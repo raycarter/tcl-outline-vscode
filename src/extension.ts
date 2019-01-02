@@ -46,8 +46,17 @@ class TclOutline {
       if (procFound !== null) {
         foundCount++;
         const u = vscode.window.activeTextEditor.document.uri.path;
-        let lineNumIndicator = ':';
+        let lineNumIndicator = '#'; // need specifically changing this for every OS???
+        // for windows: not changed
         if (/^win/.test(os.platform())) {
+          lineNumIndicator = '#';
+        }
+        // for linux: not changed
+        if (/^linux/.test(os.platform())) {
+          lineNumIndicator = '#';
+        }
+        // for OSX: not sure
+        if (/^darwin/.test(os.platform())) {
           lineNumIndicator = '#';
         }
         const anchor = `${vscode.window.activeTextEditor.document.uri}${lineNumIndicator}${lineNum}`;
