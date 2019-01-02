@@ -2,7 +2,7 @@
   "name": "tcl-outline",
   "displayName": "Tcl Outline",
   "description": "Outline for Tcl in VS Code",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "publisher": "sheng",
   "license": "MIT",
   "engines": {
